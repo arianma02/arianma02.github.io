@@ -3,7 +3,7 @@ function Hero() {
     <section id="home">
       <p>Engineering Physics × Software</p>
 
-      <h1>Arian [Surname]</h1>
+      <h1>Arian Moradi Asl</h1>
 
       <p>
         MSc Engineering Physics graduate interested in software,
