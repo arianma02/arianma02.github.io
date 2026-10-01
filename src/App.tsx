@@ -1,24 +1,26 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+
 import Navbar from "./components/Navbar";
-import Hero from "./components/Hero";
-import Projects from "./components/Projects";
-import About from "./components/About";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
+
+import Home from "./pages/Home";
+import ProjectsPage from "./pages/ProjectsPage";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
+      <ScrollToTop />
+
       <Navbar />
 
-      <main>
-        <Hero />
-        <Projects />
-        <About />
-        <Contact />
-      </main>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-      <Footer />
-    </>
+        <Route path="/projects" element={<ProjectsPage />} />
+
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

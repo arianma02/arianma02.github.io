@@ -8,22 +8,21 @@ function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="project-card">
       <div className="project-card__content">
-        <h3>{project.title}</h3>
+        <h2>{project.title}</h2>
 
-        <p>{project.description}</p>
+        <p className="project-card__description">{project.description}</p>
 
-        <div className="project-card__technologies">
-          {project.technologies.map((technology) => (
-            <span key={technology}>{technology}</span>
-          ))}
-        </div>
+        <p className="project-card__technologies">
+          {project.technologies.join(" · ")}
+        </p>
 
         <a
+          className="project-card__link"
           href={project.github}
           target="_blank"
           rel="noreferrer"
         >
-          View on GitHub ↗
+          View repository ↗
         </a>
       </div>
     </article>

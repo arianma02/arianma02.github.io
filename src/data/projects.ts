@@ -3,7 +3,6 @@ export type Project = {
   description: string;
   technologies: string[];
   github: string;
-  featured?: boolean;
 };
 
 export const projects: Project[] = [
@@ -19,20 +18,14 @@ export const projects: Project[] = [
       "TypeScript",
       "Docker",
     ],
-    github: "https://github.com/arianma02/Equipment-reservation-system",
-    featured: true,
+    github: "https://github.com/arianma02/equipment-reservation-system",
   },
 
   {
     title: "Uptime Monitor",
     description:
-      "A service for monitoring website availability and recording health and response data.",
-    technologies: [
-      "TypeScript",
-      "NestJS",
-      "PostgreSQL",
-      "Docker",
-    ],
+      "A full-stack application for monitoring website availability and recording health and response data.",
+    technologies: ["TypeScript", "NestJS", "React", "PostgreSQL", "Docker"],
     github: "https://github.com/arianma02/uptime-monitor",
   },
 ];
