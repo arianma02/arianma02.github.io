@@ -12,10 +12,6 @@ function Navbar() {
         </Link>
 
         <div className="nav-links">
-          <a href={links.cv} target="_blank" rel="noreferrer">
-            CV
-          </a>
-
           <a href={`mailto:${links.email}`}>Email</a>
 
           <a href={links.github} target="_blank" rel="noreferrer">

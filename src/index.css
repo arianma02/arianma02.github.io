@@ -8,15 +8,17 @@
     "Segoe UI",
     sans-serif;
 
-  --background: #101010;
-  --surface: #171717;
+  color-scheme: dark;
 
-  --text: #f3f3f1;
-  --muted: #b8b8b5;
+  --background: #070e1b;
+  --surface: #101d32;
 
-  --border: #2d2d2d;
+  --text: #eef4ff;
+  --muted: #b0bfd4;
 
-  --accent: #d0d0cc;
+  --border: rgba(148, 181, 225, 0.16);
+
+  --accent: #92c5ff;
 
   --max-width: 1120px;
 
@@ -40,7 +42,19 @@ body {
   min-width: 320px;
   min-height: 100vh;
 
-  background: var(--background);
+  background:
+    radial-gradient(
+      ellipse at 85% 5%,
+      rgba(38, 92, 164, 0.24),
+      transparent 55%
+    ),
+    radial-gradient(
+      ellipse at 5% 85%,
+      rgba(24, 74, 116, 0.18),
+      transparent 55%
+    ),
+    linear-gradient(145deg, #070e1b, #0b1628 55%, #080f1c);
+  background-attachment: fixed;
   color: var(--text);
 
   line-height: 1.7;
@@ -59,7 +73,13 @@ a {
 }
 
 ::selection {
-  background: rgba(208, 208, 204, 0.2);
+  background: rgba(110, 174, 255, 0.28);
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+  border-radius: 3px;
 }
 
 /* SHARED */
@@ -76,7 +96,8 @@ a {
   top: 0;
   z-index: 100;
 
-  background: rgba(16, 16, 16, 0.96);
+  background: rgba(7, 14, 27, 0.78);
+  backdrop-filter: blur(18px);
 
   border-bottom: 1px solid var(--border);
 }
@@ -240,7 +261,7 @@ a {
 .projects-grid {
   display: grid;
 
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
   gap: 22px;
 }
@@ -251,22 +272,27 @@ a {
   border: 1px solid var(--border);
   border-radius: 11px;
 
-  background: var(--surface);
+  background: linear-gradient(
+    155deg,
+    rgba(22, 40, 66, 0.82),
+    rgba(12, 24, 42, 0.9)
+  );
+  box-shadow: 0 16px 40px rgba(0, 5, 15, 0.14);
 
   transition:
     border-color 150ms ease,
-    background 150ms ease;
+    box-shadow 150ms ease;
 }
 
 .project-card:hover {
-  border-color: #3b3b3b;
-  background: #1a1a1a;
+  border-color: rgba(146, 197, 255, 0.4);
+  box-shadow: 0 16px 44px rgba(0, 5, 15, 0.24);
 }
 
 .project-card__content {
   height: 100%;
 
-  padding: 34px;
+  padding: 30px;
 
   display: flex;
   flex-direction: column;
@@ -316,6 +342,12 @@ a {
 }
 
 /* TABLET */
+
+@media (min-width: 801px) and (max-width: 1050px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 
 @media (max-width: 800px) {
   .shell {
